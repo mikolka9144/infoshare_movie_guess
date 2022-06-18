@@ -14,7 +14,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String movie_name = getRandomMovie();
 
-        char[] movie_to_guess = movie_name.toCharArray();
         char[] display = movie_name.replaceAll("\\S","_").toCharArray();
         StringBuilder wrong_letters_blob = new StringBuilder();
 
@@ -33,8 +32,8 @@ public class Main {
             char input = GetLetter();
 
             boolean guessed_letter = false;
-            for (int i = 0; i < movie_to_guess.length; i++) {
-                if(movie_to_guess[i] == input){
+            for (int i = 0; i < movie_name.length(); i++) {
+                if(movie_name.charAt(i) == input){
                     guessed_letter = true;
                     display[i] = input;
                 }
